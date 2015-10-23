@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+
+	<session-factory>
+
+		<property name="hibernate.dialect">org.hibernate.dialect.PostgreSQLDialect</property>
+		<property name="hibernate.connection.driver_class">org.postgresql.Driver</property>
+	     <property name="hibernate.connection.url">jdbc:postgresql://192.168.1.51:5432/postgres</property>
+		 <property name="hibernate.connection.username">postgres</property> 
+		 <property name="hibernate.connection.password">software</property> 
+		
+	<!-- 	 <property name="hibernate.connection.url">jdbc:postgresql://coriderdb.ckr9kmldwb0w.ap-southeast-1.rds.amazonaws.com:5432/coriderdb</property>
+		<property name="hibernate.connection.username">corider</property>
+		<property name="hibernate.connection.password">winteriscoming </property> -->
+		
+		<property name="hibernate.current_session_context_class">thread</property>
+		<property name="hibernate.show_sql">true</property>
+         <property name="hibernate.format_sql">true</property>
+          <property name="hibernate.transaction.factory_class">org.hibernate.transaction.JDBCTransactionFactory</property>      
+         
+	
+		<mapping class="com.ssinfo.ws.rider.mapping.UserTbl"/>
+		<mapping class="com.ssinfo.ws.rider.mapping.DeviceInfoTbl"/>
+		<mapping class="com.ssinfo.ws.rider.mapping.CoriderInfoTbl"/>
+		<mapping class="com.ssinfo.ws.rider.mapping.LocationInfoTbl"/>
+		<mapping class="com.ssinfo.ws.rider.mapping.SearchInfoTbl"/>
+		<mapping class="com.ssinfo.ws.rider.mapping.CoriderInfoTbl"/>
+		<mapping class="com.ssinfo.ws.rider.mapping.RoutesTbl" />
+		<mapping class="com.ssinfo.ws.rider.mapping.LegsTbl" />
+		<mapping class="com.ssinfo.ws.rider.mapping.RouteInfoTbl" />
+		<mapping class="com.ssinfo.ws.rider.mapping.StepsTbl" />
+	<!-- 	<mapping class="com.ssinfo.ws.rider.mapping.GcmInfoTbl"/> -->
+		
+	</session-factory>
+
+</hibernate-configuration>
